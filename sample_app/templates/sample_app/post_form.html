@@ -5,45 +5,63 @@
     <title>Post Form</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928DAB);
+            color: #ffffff;
+            margin: 0;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         form {
             width: 60%;
-            margin: 20px auto;
-            background-color: #fff;
+            background: rgba(0, 0, 0, 0.5);
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
         }
         h4 {
-            color: #007bff;
+            color: #00c6ff;
+            text-align: center;
+            margin-bottom: 20px;
         }
         input, textarea {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             margin-bottom: 10px;
-            border: 1px solid #ddd;
-            box-sizing: border-box;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
             font-size: 14px;
         }
         button {
-            background-color: #007bff;
+            background: #00c6ff;
             color: white;
             padding: 10px 20px;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
+            transition: background 0.3s;
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
         }
         button:hover {
-            background-color: #0056b3;
+            background: #0072ff;
         }
         a {
             text-decoration: none;
-            color: #007bff;
-            margin-right: 10px;
+            color: #00c6ff;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            transition: color 0.3s;
         }
         a:hover {
-            text-decoration: underline;
+            color: #0072ff;
         }
     </style>
 </head>
@@ -56,9 +74,9 @@
     {% endif %}
       {% csrf_token %}
       {{ form }}
-      <button type="submit">Submit</button>
+      <button type="submit">保存</button>
     </form>
-    <a href="{% url 'sample_app:read_post' %}">Back to List</a>
+    <a href="{% url 'sample_app:read_post' %}">リストに戻る</a>
   
     <script>
         // Example JavaScript for link click event
